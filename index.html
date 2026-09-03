@@ -1,44 +1,94 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-<style>
-    header{
-        background-color: #42285A;
-    color: white;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    border: 5px solid #C747FE;
-    padding: 16px;
-    }
-    main{
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        header {
+            background-color: #183C63;
+            color: #FFFFFF;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        main {
+            background-color: #FFFFFF;
+            color: #183C63;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+        article{
+            display: flex;
+        }
+
         img {
-width: 80px;
-height: 80px;
-}
-        background-color: white;
-        color: #42285A;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-</style>
+            width: 80px;
+            height: 80px;
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
-<header>
-<h1>Meu blog tech</h1>
-<p>Me chamo Mateus Roberto, tenho 14 anos, sou amante de matemática e muitas outras matérias. 
-Sou iniciante de arte e gosto de criar meus própios desing e histórias e vou compartilhar conhecimentos sobre tecnologia e programação.</p>
-</header>
-<main>
-    <img src="Gemini_Generated_Image_gneduggneduggned.png" alt="logotipo conceitual de tecnologia e educação: um livro aberto de onde emerge um lâmpada digital brilhante com um chip no centro dela, cercado por ícones da Terra, lupa, foguete. Com cores azul e branco."
-<p>Por: Mateus Roberto</p>
-<p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades sobre tecnologia.</p> </p>
-
-</main>
-
+    <header>
+        <h1>Meu blog tech</h1>
+        <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
+    </header>
+    <main>
+        <article>
+            <img src="Gemini_Generated_Image_gneduggneduggned.png"
+                alt="Logotipo conceitual de tecnologia e educação: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
+            <div>
+                <h2>Meu primeiro post</h2>
+                <p class="artigo-autor">Por: Mateus Roberto</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de
+                    tecnologia.</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+        <article>
+            <img src="Gemini_Generated_Image_gneduggneduggned.png"
+                alt="Logotipo conceitual de tecnologia e educação: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
+            <div>
+                <h2>Meu segundo post</h2>
+                <p class="artigo-autor">Por: Mateus Roberto</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de
+                    tecnologia.</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+    </main>
 </body>
+<script>
+    const botoes = document.querySelectorAll("button");
+
+    botoes.forEach(function (botao) {
+        let curtiu = false;
+        botao.addEventListener("click", botaoClicado);
+        function botaoClicado() {
+            console.log("fui clicado");
+            let texto = botao.querySelector("span");
+            if (curtiu === false){
+                texto.textContent++;
+                curtiu = true;
+            } else{
+                texto.textContent--;
+                curtiu = false;
+            }
+        }
+    })
+
+
+</script>
+
 </html>
